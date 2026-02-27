@@ -260,10 +260,9 @@ document.getElementById("jobForm").addEventListener("submit", async function(e){
     const form = e.target;
     const data = new FormData(form);
 
-    const response = await fetch(form.action, {
+    const response = await fetch("https://formspree.io/f/mgolqvyr", {
         method: "POST",
-        body: data,
-        headers: { "Accept": "application/json" }
+        body: data
     });
 
     if (response.ok) {
