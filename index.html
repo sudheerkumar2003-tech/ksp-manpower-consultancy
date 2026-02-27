@@ -98,7 +98,19 @@ border-radius:50%;text-decoration:none;font-size:22px;
 <h2>Apply for Job</h2>
 
 <form id="jobForm"
-      action="https://script.google.com/macros/s/AKfycbxFHyVUFbrfTWAKHk4RZK4mmV4NXc7kLWL7fBRyz2fHTfkTdMiOPIBS-f0R6rYe9X4/exec"
+      <form id="jobForm"
+      action="https://script.google.com/macros/s/AKfycbz7N6jQI64z0Br-hbGsq93ocesf9M-bXfvSQ5OZz-ASirg0ysZbevV-0EF-CsBpkXKFX/exec"
+      method="POST"
+      enctype="multipart/form-data">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
+
+    <button type="submit">Submit Application</button>
+</form>
       method="POST"
       enctype="multipart/form-data">
 
@@ -132,4 +144,5 @@ document.getElementById("jobForm").addEventListener("submit", function(){
 </script>
 
 </body>
+
 </html>
