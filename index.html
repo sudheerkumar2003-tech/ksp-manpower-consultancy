@@ -131,6 +131,21 @@ border:none;
 cursor:pointer;
 }
 
+/* SUCCESS POPUP */
+#successPopup{
+display:none;
+position:fixed;
+top:20px;
+right:20px;
+background:#28a745;
+color:#fff;
+padding:15px 20px;
+border-radius:10px;
+box-shadow:0 0 12px rgba(0,0,0,0.3);
+font-size:16px;
+z-index:9999;
+}
+
 /* FOOTER */
 footer{
 background:#0f2027;
@@ -199,14 +214,16 @@ KSP Manpower Consultancy is a Hyderabad based recruitment agency providing verif
 <section id="apply">
 <h2>Apply for Job</h2>
 
-<form name="job-application" method="POST" data-netlify="true" enctype="multipart/form-data">
-<input type="hidden" name="form-name" value="job-application">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
-<input type="file" name="resume" required>
-<button type="submit">Submit Application</button>
+<form id="jobForm" action="https://formspree.io/f/mgolqvyr" method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="file" name="resume" required>
+
+    <button type="submit">Submit Application</button>
 </form>
+
+<div id="successPopup">✅ Application Submitted Successfully!</div>
 
 </section>
 
@@ -235,6 +252,41 @@ loading="lazy">
 </footer>
 
 <a href="https://wa.me/919100697339" class="whatsapp">💬</a>
+
+<script>
+document.getElementById("jobForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+        const popup = document.getElementById("successPopup");
+        popup.style.display = "block";
+
+        setTimeout(() => { popup.style.display = "none"; }, 2000);
+
+        setTimeout(() => {
+            window.location.href = "thank-you.html";
+
+            setTimeout(() => {
+                window.location.href = "https://wa.me/919100697339?text=I%20submitted%20my%20job%20application.";
+            }, 1000);
+
+        }, 2000);
+
+        form.reset();
+    } else {
+        alert("Something went wrong. Please try again.");
+    }
+});
+</script>
 
 </body>
 </html>
