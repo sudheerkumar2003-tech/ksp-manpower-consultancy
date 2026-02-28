@@ -87,13 +87,13 @@ border-radius:50%;text-decoration:none;font-size:22px;
 <section id="apply">
 <h2>Apply for Job</h2>
 
-<form id="jobForm" method="POST" enctype="multipart/form-data">
+<form id="jobForm">
 
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="tel" name="phone" placeholder="Phone Number" required>
 
-    <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
+    <input type="file" name="resume" id="resume" required>
 
     <button type="submit">Submit Application</button>
 </form>
@@ -109,26 +109,48 @@ border-radius:50%;text-decoration:none;font-size:22px;
 <a href="https://wa.me/919100697339" class="whatsapp">💬</a>
 
 <script>
-// YOUR GOOGLE APPS SCRIPT URL
 const scriptURL = "https://script.google.com/macros/s/AKfycbzC2PAB_dTXSmgU_shMfEh1NIiszL-LpveXDw1NwmBciFXHYHxQ_bPFqy6FbVTU3Nf0/exec";
 
-document.getElementById("jobForm").addEventListener("submit", function(e){
+document.getElementById("jobForm").addEventListener("submit", async function(e){
     e.preventDefault();
 
-    let formData = new FormData(this);
+    let file = document.getElementById("resume").files[0];
+    let fd = new FormData();
+    fd.append("file", file);
 
-    fetch(scriptURL, {
+    // ------- Upload to file.io ------
+    let upload = await fetch("https://file.io?expires=14d", {
         method: "POST",
-        body: formData
-    })
-    .then(response => {
-        document.getElementById("successPopup").style.display = "block";
-        setTimeout(() => {
-            document.getElementById("successPopup").style.display = "none";
-        }, 3000);
-        document.getElementById("jobForm").reset();
-    })
-    .catch(error => alert("Error: " + error.message));
+        body: fd
+    });
+
+    let result = await upload.json();
+    if (!result.success) {
+        alert("Resume upload failed!");
+        return;
+    }
+
+    let resumeLink = result.link;
+
+    // ------- Send details to Apps Script ------
+    let data = new URLSearchParams();
+    data.append("name", document.querySelector("input[name='name']").value);
+    data.append("email", document.querySelector("input[name='email']").value);
+    data.append("phone", document.querySelector("input[name='phone']").value);
+    data.append("link", resumeLink);
+
+    await fetch(scriptURL, {
+        method: "POST",
+        body: data
+    });
+
+    // ------- Success Popup ------
+    document.getElementById("successPopup").style.display = "block";
+    setTimeout(() => {
+        document.getElementById("successPopup").style.display = "none";
+    }, 3000);
+
+    document.getElementById("jobForm").reset();
 });
 </script>
 
