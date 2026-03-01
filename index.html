@@ -45,15 +45,8 @@ color:#fff;
 padding:30px;
 text-align:center;
 }
-header h1{
-font-size:32px;
-font-weight:800;
-letter-spacing:1px;
-}
-header p{
-opacity:.9;
-margin-top:8px;
-}
+header h1{font-size:32px;font-weight:800;letter-spacing:1px;}
+header p{opacity:.9;margin-top:8px}
 
 /* NAV */
 nav{
@@ -65,139 +58,77 @@ top:0;
 z-index:999;
 }
 nav a{
-color:#fff;
-text-decoration:none;
-margin:0 18px;
-font-weight:500;
-transition:.3s;
+color:#fff;text-decoration:none;margin:0 18px;
+font-weight:500;transition:.3s;
 }
 nav a:hover{color:#ffd700}
 
 /* HERO */
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:#fff;
+height:90vh;display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;color:#fff;
 background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
-background-size:cover;
-background-position:center;
+background-size:cover;background-position:center;
 }
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-.hero p{
-max-width:600px;
-margin-bottom:30px;
-}
+.hero h1{font-size:48px;margin-bottom:20px}
+.hero p{max-width:600px;margin-bottom:30px}
 .btn{
 background:linear-gradient(45deg,#ffd700,#ffb700);
-padding:14px 35px;
-border:none;
-border-radius:50px;
-font-weight:600;
-cursor:pointer;
+padding:14px 35px;border:none;border-radius:50px;
+font-weight:600;cursor:pointer;
 }
 
 /* SECTION */
-section{
-padding:80px 20px;
-max-width:1100px;
-margin:auto;
-}
-section h2{
-text-align:center;
-margin-bottom:40px;
-color:#0f2027;
-}
+section{padding:80px 20px;max-width:1100px;margin:auto}
+section h2{text-align:center;margin-bottom:40px;color:#0f2027}
+
 .grid{
-display:flex;
-flex-wrap:wrap;
-gap:25px;
-justify-content:center;
+display:flex;flex-wrap:wrap;gap:25px;justify-content:center;
 }
 .card{
-flex:1;
-min-width:250px;
-background:#fff;
-padding:30px;
-border-radius:15px;
-text-align:center;
+flex:1;min-width:250px;background:#fff;padding:30px;
+border-radius:15px;text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* CAREER LISTINGS */
+/* JOB LISTINGS */
 .job-card{
-background:#fff;
-border-radius:15px;
-padding:25px;
+background:#fff;border-radius:15px;padding:25px;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
-width:100%;
-max-width:320px;
+width:100%;max-width:320px;
 }
-.job-card h3{
-font-size:20px;
-margin-bottom:12px;
-color:#203a43;
-}
-.job-card p{
-margin-bottom:10px;
-}
+.job-card h3{font-size:20px;margin-bottom:12px;color:#203a43}
+.job-card p{margin-bottom:10px}
 .job-btn{
-margin-top:15px;
-background:#0f2027;
-color:#fff;
-padding:10px 20px;
-border:none;
-border-radius:8px;
-cursor:pointer;
+margin-top:15px;background:#0f2027;color:#fff;
+padding:10px 20px;border:none;border-radius:8px;cursor:pointer;
 }
 
 /* FORM */
 form{
-display:flex;
-flex-direction:column;
-gap:15px;
-max-width:500px;
-margin:auto;
+display:flex;flex-direction:column;gap:15px;
+max-width:500px;margin:auto;
 }
 form input,form button{
-padding:12px;
-border-radius:8px;
-border:1px solid #ccc;
+padding:12px;border-radius:8px;border:1px solid #ccc;
 }
 form button{
-background:#0f2027;
-color:#fff;
-border:none;
-cursor:pointer;
+background:#0f2027;color:#fff;border:none;cursor:pointer;
 }
 
 /* FOOTER */
 footer{
-background:#0f2027;
-color:#fff;
-text-align:center;
-padding:20px;
-margin-top:60px;
+background:#0f2027;color:#fff;text-align:center;
+padding:20px;margin-top:60px;
 }
 
 /* WhatsApp */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:#fff;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-font-size:22px;
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:#fff;padding:15px;
+border-radius:50%;text-decoration:none;font-size:22px;
 }
 
 @media(max-width:768px){
@@ -209,12 +140,10 @@ font-size:22px;
 <body>
 
 <header>
-
 <div class="brand-logo">
 <div class="logo-circle">K</div>
 <h1>KSP Manpower Consultancy</h1>
 </div>
-
 <p>Professional Recruitment & Staffing Solutions</p>
 </header>
 
@@ -252,7 +181,6 @@ KSP Manpower Consultancy is a Hyderabad based recruitment agency providing verif
 <!-- CAREER LISTINGS -->
 <section id="careers">
 <h2>Current Job Openings</h2>
-
 <div class="grid">
 
 <div class="job-card">
@@ -282,18 +210,54 @@ KSP Manpower Consultancy is a Hyderabad based recruitment agency providing verif
 </div>
 </section>
 
+<!-- APPLY FORM WITH GOOGLE DRIVE UPLOAD -->
 <section id="apply">
 <h2>Apply for Job</h2>
 
-<form name="job-application" method="POST" data-netlify="true" enctype="multipart/form-data">
-<input type="hidden" name="form-name" value="job-application">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
-<input type="file" name="resume" required>
-<button type="submit">Submit Application</button>
+<form id="resumeForm">
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+  <input type="file" name="resumeFile" id="resumeFile" required>
+
+  <button type="submit">Submit Application</button>
 </form>
 
+<p id="statusMsg" style="text-align:center;margin-top:10px;font-weight:600;"></p>
+
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbxQq1tbmoksFahCNu_Au5TqIYmnXb3aaBF6BbpgHu5dpxp96pp2E14dLa5N-U-sQFU/exec";
+
+document.getElementById("resumeForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const fileInput = document.getElementById("resumeFile");
+  const file = fileInput.files[0];
+
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+
+  reader.onload = async function () {
+    const base64Data = reader.result.split(",")[1];
+
+    const formData = new FormData();
+    formData.append("fileData", base64Data);
+    formData.append("fileName", file.name);
+    formData.append("fileType", file.type);
+
+    const res = await fetch(scriptURL, {
+      method: "POST",
+      body: formData
+    });
+
+    const json = await res.json();
+    document.getElementById("statusMsg").textContent =
+      json.status === "success"
+      ? "Resume Uploaded Successfully! 🎉"
+      : "Upload Failed. 😕 Try again";
+  };
+});
+</script>
 </section>
 
 <section id="contact">
@@ -307,13 +271,8 @@ UDYAM-TS-09-0218119
 </p>
 
 <br>
-
-<iframe 
-src="https://www.google.com/maps?q=Kokapet,Hyderabad&output=embed"
-width="100%" height="250" style="border:0;border-radius:15px;" 
-loading="lazy">
-</iframe>
-
+<iframe src="https://www.google.com/maps?q=Kokapet,Hyderabad&output=embed"
+width="100%" height="250" style="border:0;border-radius:15px;" loading="lazy"></iframe>
 </section>
 
 <footer>
