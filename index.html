@@ -6,60 +6,155 @@
 
 <title>KSP Manpower Consultancy | Job Consultancy in Hyderabad</title>
 
+<meta name="description" content="KSP Manpower Consultancy in Hyderabad provides professional recruitment and staffing solutions for IT, Telecom & Infrastructure sectors.">
+<meta name="keywords" content="Job Consultancy in Hyderabad, Recruitment Agency Hyderabad, Manpower Consultancy Hyderabad, IT Hiring Hyderabad">
+<meta name="author" content="KSP Manpower Consultancy">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:#f4f7fb;color:#222}
 
+/* HEADER */
 header{
 background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-color:#fff;padding:30px;text-align:center;
+color:#fff;
+padding:30px;
+text-align:center;
+}
+header h1{
+font-size:32px;
+font-weight:800;
+letter-spacing:1px;
+}
+header p{
+opacity:.9;
+margin-top:8px;
 }
 
+/* NAV */
 nav{
-background:#0f2027;padding:15px;text-align:center;position:sticky;top:0;z-index:999;
+background:#0f2027;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:999;
 }
-nav a{color:#fff;text-decoration:none;margin:0 18px;font-weight:500;transition:.3s;}
+nav a{
+color:#fff;
+text-decoration:none;
+margin:0 18px;
+font-weight:500;
+transition:.3s;
+}
 nav a:hover{color:#ffd700}
 
+/* HERO */
 .hero{
-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
-text-align:center;color:#fff;
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:#fff;
 background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
-background-size:cover;background-position:center;
+background-size:cover;
+background-position:center;
+}
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+.hero p{
+max-width:600px;
+margin-bottom:30px;
 }
 
 .btn{
-background:linear-gradient(45deg,#ffd700,#ffb700);padding:14px 35px;border:none;
-border-radius:50px;font-weight:600;cursor:pointer;
+background:linear-gradient(45deg,#ffd700,#ffb700);
+padding:14px 35px;
+border:none;
+border-radius:50px;
+font-weight:600;
+cursor:pointer;
 }
 
-section{padding:80px 20px;max-width:1100px;margin:auto;}
-section h2{text-align:center;margin-bottom:40px;color:#0f2027;}
+/* SECTION */
+section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+section h2{
+text-align:center;
+margin-bottom:40px;
+color:#0f2027;
+}
 
-form{display:flex;flex-direction:column;gap:15px;max-width:500px;margin:auto;}
+.grid{
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+justify-content:center;
+}
+.card{
+flex:1;
+min-width:250px;
+background:#fff;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
 
+/* FORM */
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+max-width:500px;
+margin:auto;
+}
 form input,form button{
-padding:12px;border-radius:8px;border:1px solid #ccc;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
 }
 form button{
-background:#0f2027;color:#fff;border:none;cursor:pointer;
+background:#0f2027;
+color:#fff;
+border:none;
+cursor:pointer;
 }
 
-#successPopup{
-display:none;position:fixed;top:20px;right:20px;background:#28a745;color:#fff;
-padding:15px 20px;border-radius:10px;box-shadow:0 0 12px rgba(0,0,0,0.3);font-size:16px;z-index:9999;
-}
-
+/* FOOTER */
 footer{
-background:#0f2027;color:#fff;text-align:center;padding:20px;margin-top:60px;
+background:#0f2027;
+color:#fff;
+text-align:center;
+padding:20px;
+margin-top:60px;
 }
 
+/* WhatsApp */
 .whatsapp{
-position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px;
-border-radius:50%;text-decoration:none;font-size:22px;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:22px;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:28px}
 }
 </style>
 </head>
@@ -84,21 +179,54 @@ border-radius:50%;text-decoration:none;font-size:22px;
 <a href="tel:+919100697339"><button class="btn">Call Now</button></a>
 </section>
 
+<section id="about">
+<h2>About Us</h2>
+<p style="text-align:center;max-width:800px;margin:auto">
+KSP Manpower Consultancy is a Hyderabad based recruitment agency providing verified workforce solutions for IT, Telecom and Infrastructure companies across India.
+</p>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card">Permanent Recruitment</div>
+<div class="card">Contract Staffing</div>
+<div class="card">Bulk Hiring</div>
+<div class="card">Payroll Support</div>
+</div>
+</section>
+
 <section id="apply">
 <h2>Apply for Job</h2>
 
-<form id="jobForm">
-
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-
-    <input type="file" name="resume" id="resume" required>
-
-    <button type="submit">Submit Application</button>
+<form name="job-application" method="POST" data-netlify="true" enctype="multipart/form-data">
+<input type="hidden" name="form-name" value="job-application">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="file" name="resume" required>
+<button type="submit">Submit Application</button>
 </form>
 
-<div id="successPopup">✅ Application Submitted Successfully!</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p style="text-align:center">
+Karthik Samuel Paul<br>
+📞 +91 9100697339<br>
+📧 Rodhiballamudi@gmail.com<br>
+📍 Kokapet, Hyderabad – 500075<br>
+UDYAM-TS-09-0218119
+</p>
+
+<br>
+
+<iframe 
+src="https://www.google.com/maps?q=Kokapet,Hyderabad&output=embed"
+width="100%" height="250" style="border:0;border-radius:15px;" 
+loading="lazy">
+</iframe>
 
 </section>
 
@@ -107,52 +235,6 @@ border-radius:50%;text-decoration:none;font-size:22px;
 </footer>
 
 <a href="https://wa.me/919100697339" class="whatsapp">💬</a>
-
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbzC2PAB_dTXSmgU_shMfEh1NIiszL-LpveXDw1NwmBciFXHYHxQ_bPFqy6FbVTU3Nf0/exec";
-
-document.getElementById("jobForm").addEventListener("submit", async function(e){
-    e.preventDefault();
-
-    let file = document.getElementById("resume").files[0];
-    let fd = new FormData();
-    fd.append("file", file);
-
-    // ------- Upload to file.io ------
-    let upload = await fetch("https://file.io?expires=14d", {
-        method: "POST",
-        body: fd
-    });
-
-    let result = await upload.json();
-    if (!result.success) {
-        alert("Resume upload failed!");
-        return;
-    }
-
-    let resumeLink = result.link;
-
-    // ------- Send details to Apps Script ------
-    let data = new URLSearchParams();
-    data.append("name", document.querySelector("input[name='name']").value);
-    data.append("email", document.querySelector("input[name='email']").value);
-    data.append("phone", document.querySelector("input[name='phone']").value);
-    data.append("link", resumeLink);
-
-    await fetch(scriptURL, {
-        method: "POST",
-        body: data
-    });
-
-    // ------- Success Popup ------
-    document.getElementById("successPopup").style.display = "block";
-    setTimeout(() => {
-        document.getElementById("successPopup").style.display = "none";
-    }, 3000);
-
-    document.getElementById("jobForm").reset();
-});
-</script>
 
 </body>
 </html>
